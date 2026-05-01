@@ -164,6 +164,8 @@ body, html {
     align-items: center;
     gap: 30px;
     padding: 40px;
+    max-height: 400px;  /* You can adjust the height to fit your design */
+    overflow-y: auto;   /* This enables scrolling when the content overflows */
 }
 
 .profile-img {
