@@ -1,4 +1,8 @@
 /* --- Base Styles --- */
+* {
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'Sloop Script';
     src: url('src/sloop-script-regular.otf'); /* Or .ttf based on your actual file */
