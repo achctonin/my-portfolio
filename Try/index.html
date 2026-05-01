@@ -7,8 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<div id="modal-backdrop" class="backdrop hidden"></div>
+
 <body>
+    <div id="modal-backdrop" class="backdrop hidden"></div>
     <main class="workspace">
         <div class="sidebar">
             <div class="icon" onclick="openWindow('about-win')">
@@ -133,44 +134,44 @@
                 <img src="src/game-icon.svg" alt="Game">
             </div>
         </div>
-
-        <div id="calc-win" class="window hidden">
-            <div class="window-header">
-                <span class="exe-label">calculator.exe</span>
-                <button class="close-btn-red" onclick="closeWindow('calc-win')">
-                    <img src="src/cls-icon.svg" alt="Close">
-                </button>
-            </div>
-            <div class="calc-body">
-                <div class="calc-display" id="display">0</div>
-                <div class="calc-grid">
-                    <button class="cbtn" onclick="pressNum('1')">1</button>
-                    <button class="cbtn" onclick="pressNum('2')">2</button>
-                    <button class="cbtn" onclick="pressNum('3')">3</button>
-                    <button class="cbtn op" onclick="pressOp('+')">+</button>
-                    <button class="cbtn" onclick="pressNum('4')">4</button>
-                    <button class="cbtn" onclick="pressNum('5')">5</button>
-                    <button class="cbtn" onclick="pressNum('6')">6</button>
-                    <button class="cbtn op" onclick="pressOp('-')">−</button>
-                    <button class="cbtn" onclick="pressNum('7')">7</button>
-                    <button class="cbtn" onclick="pressNum('8')">8</button>
-                    <button class="cbtn" onclick="pressNum('9')">9</button>
-                    <button class="cbtn op" onclick="pressOp('*')">×</button>
-                    <button class="cbtn" onclick="pressDec()">.</button>
-                    <button class="cbtn" onclick="pressNum('0')">0</button>
-                    <button class="cbtn eq" onclick="calculate()">=</button>
-                    <button class="cbtn op" onclick="pressOp('/')">÷</button>
-                </div>
-                <div class="calc-bottom">
-                    <button class="cbtn util" onclick="pressNeg()">(−)</button>
-                    <button class="cbtn util" onclick="pressDel()">Del</button>
-                    <button class="cbtn util" onclick="pressClear()">Clr</button>
-                </div>
-            </div>
-        </div>
     </footer>
 
-  
+    <div id="calc-win" class="window hidden">
+        <div class="window-header">
+            <span class="exe-label">calculator.exe</span>
+            <button class="close-btn-red" onclick="closeWindow('calc-win')">
+                <img src="src/cls-icon.svg" alt="Close">
+            </button>
+        </div>
+        <div class="calc-body">
+            <div class="calc-display" id="display">0</div>
+            <div class="calc-grid">
+                <button class="cbtn" onclick="pressNum('1')">1</button>
+                <button class="cbtn" onclick="pressNum('2')">2</button>
+                <button class="cbtn" onclick="pressNum('3')">3</button>
+                <button class="cbtn op" onclick="pressOp('+')">+</button>
+                <button class="cbtn" onclick="pressNum('4')">4</button>
+                <button class="cbtn" onclick="pressNum('5')">5</button>
+                <button class="cbtn" onclick="pressNum('6')">6</button>
+                <button class="cbtn op" onclick="pressOp('-')">−</button>
+                <button class="cbtn" onclick="pressNum('7')">7</button>
+                <button class="cbtn" onclick="pressNum('8')">8</button>
+                <button class="cbtn" onclick="pressNum('9')">9</button>
+                <button class="cbtn op" onclick="pressOp('*')">×</button>
+                <button class="cbtn" onclick="pressDec()">.</button>
+                <button class="cbtn" onclick="pressNum('0')">0</button>
+                <button class="cbtn eq" onclick="calculate()">=</button>
+                <button class="cbtn op" onclick="pressOp('/')">÷</button>
+            </div>
+            <div class="calc-bottom">
+                <button class="cbtn util" onclick="pressNeg()">(−)</button>
+                <button class="cbtn util" onclick="pressDel()">Del</button>
+                <button class="cbtn util" onclick="pressClear()">Clr</button>
+            </div>
+        </div>
+    </div>
+
+
     <script src="script.js"></script>
 </body>
 </html>

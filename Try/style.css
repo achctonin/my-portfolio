@@ -67,10 +67,10 @@ body, html {
 }
 
 .workspace.locked .menu-toggle,
-.workspace.locked + .taskbar {
-    pointer-events: none; /* This makes them physically unclickable */
-    opacity: 0.5;         /* Visual cue that they are disabled */
-    filter: grayscale(1); /* Optional: turns them gray while locked */
+.workspace.locked + .taskbar .dock {
+    pointer-events: none;
+    opacity: 0.5;
+    filter: grayscale(0);
 }
 
 /* --- Quote --- */
@@ -348,11 +348,11 @@ body, html {
 }
 
 .calc-body {
-    background: #a8c0ce;
+    background:  #FBD9E5;
     padding: 20px;
 }
 .calc-display {
-    background: #ecf1f4;
+    background: #ffffff;
     color: #22343e;
     font-size: 1.4rem;
     text-align: right;
@@ -389,4 +389,4 @@ body, html {
 .cbtn:hover { background: #f0d8e2; transform: scale(1.04); }
 .cbtn.op { background: #b4c6ae; }
 .cbtn.eq { background: #818564; color: white; }
-.cbtn.util { background: #e8d5db; }
+.cbtn.util { background: #f0d8e2; }
