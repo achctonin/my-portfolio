@@ -1,0 +1,392 @@
+/* --- Base Styles --- */
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Sloop Script';
+    src: url('src/sloop-script-regular.otf'); /* Or .ttf based on your actual file */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #F8F0DD; /* Cream background */
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.workspace {
+    position: relative;
+    height: calc(100vh - 90px);
+    padding: 50px;
+    transition: filter 0.3s ease;
+}
+
+/* --- Sidebar & Icons --- */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100px;
+}
+
+.icon {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.icon:hover { transform: scale(1.05); }
+
+.icon-img {
+    width: 65px;
+    height: 60px;
+    background-color: #b4c6ae; /* Sage green icon box */
+    border-radius: 12px;
+    margin: 0 auto 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.icon span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #4a4a4a;
+}
+
+/* --- The Lock Effect --- */
+.workspace.locked .sidebar, 
+.workspace.locked .quote {
+    opacity: 0.4;
+    pointer-events: none; /* Disables clicking icons when a window is open */
+}
+
+.workspace.locked .menu-toggle,
+.workspace.locked + .taskbar .dock {
+    pointer-events: none;
+    opacity: 0.5;
+    filter: grayscale(0);
+}
+
+/* --- Quote --- */
+.quote {
+    position: absolute;
+    bottom: 50%;
+    right: 8%;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #818564;
+}
+
+/* Ensure your windows are hidden by default and centered */
+.window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    /* ADD THESE THREE LINES */
+    background-color:  #FBD9E5; 
+    border: 2.5px solid #818564; /* This is your sage green border */
+    border-radius: 12px;
+    
+    overflow: hidden; /* This keeps the pink background from 'bleeding' over the corners */
+    min-width: 500px;
+}
+
+.window.show {
+    display: block;
+}
+
+.hidden { display: none !important; }
+
+/* Pink Header (About, Contact, Resume) */
+.window-header {
+    background: #FFF3F7;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 2.5px solid #818564;
+}
+
+/* White Header (Projects) */
+.window-header-white {
+    background: white;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1.5px solid #ccc;
+}
+
+.exe-label { margin-right: auto; font-size: 0.8rem; padding-left: 10px; }
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(2px);           
+    z-index: 50;                          
+}
+
+/* Close Buttons */
+.close-btn-red {
+    width: 24px;
+    height: 24px;
+    background: #e57373;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-btn-small {
+    background: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Layout Inside Windows */
+.about-layout {
+    background-color: #FBD9E5; /* Pink body */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+.script-font {
+    font-family: 'Sloop Script', cursive;
+    font-size: 4rem;
+    font-style: italic;
+    text-shadow: rgba(0,0,0,0.1) ;
+    color: #818564;
+    margin: 0;
+}
+
+.projects-content { padding: 40px; }
+#projects-win .about-layout {
+    max-height: 60vh;
+    overflow-y: auto;
+    align-items: flex-start; /* keeps text aligned to the top while scrolling */
+}
+
+/* --- Taskbar/Dock --- */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #818564; /* Dark sage color from your design */
+    display: flex;
+    justify-content: center; /* Centers the dock horizontally */
+    align-items: center; /* Centers the dock vertically */
+    z-index: 30;
+}
+
+/* The lighter rounded "pill" containing the icons */
+.dock {
+    display: flex;
+    background-color: #818564; /* Light cream dock background */
+    padding: 10px 25px;
+    border-radius: 20px;
+    gap: 35px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0);
+}
+
+/* Dock Item Styling */
+.dock-item {
+    width: 60px;
+    height: 60px;
+    background-color: #FFF3F7;
+    border: 1.5px solid #818564;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.download-btn {
+    background-color: #818564;
+    color: white;
+    border: 1px;
+    border-color: #4a4a4a;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dock-item:hover {
+    transform: translateY(-5px); /* Gentle float effect when hovering */
+}
+
+.dock-item img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .window {
+        width: min(90%, 500px);
+        min-width: unset; /* Overrides the 500px desktop setting */
+    }
+
+    #calc-win {
+        top: 52%;              /* slightly lower so it looks centered visually */
+        max-height: 85vh;      /* prevents overflow */
+        overflow-y: auto;      /* allows scrolling if needed */
+    }
+
+    .about-layout {
+        flex-direction: column; /* Stacks profile img on top of text */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* Hide the original left sidebar on phone */
+    .sidebar {
+        display: none;
+    }
+
+    /* Styling the Hamburger Button */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 30;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #818564;
+        border-radius: 2px;
+    }
+
+    /* Full-screen Mobile Menu Overlay */
+    .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(129, 181, 113, 0.9); /* Dark overlay like your reference */
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1500;
+    }
+
+    .mobile-overlay.active {
+        display: flex;
+    }
+
+    .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .mobile-nav-links a {
+        color: white;
+        font-size: 2rem;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+}
+
+/* Hide the hamburger on Desktop */
+@media (min-width: 601px) {
+    .menu-toggle, .mobile-overlay {
+        display: none;
+    }
+}
+
+.calc-body {
+    background:  #FBD9E5;
+    padding: 20px;
+}
+.calc-display {
+    background: #ffffff;
+    color: #22343e;
+    font-size: 1.4rem;
+    text-align: right;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    min-height: 48px;
+    word-break: break-all;
+    border: 1.5px solid #818564;
+}
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.calc-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+.cbtn {
+    background: #FFF3F7;
+    border: 1.5px solid #818564;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 0;
+    cursor: pointer;
+    color: #22343e;
+    transition: transform 0.1s;
+}
+.cbtn:hover { background: #f0d8e2; transform: scale(1.04); }
+.cbtn.op { background: #b4c6ae; }
+.cbtn.eq { background: #818564; color: white; }
+.cbtn.util { background: #f0d8e2; }
