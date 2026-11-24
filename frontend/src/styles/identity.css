@@ -1,0 +1,194 @@
+/* Warm cream foundation, sage structure, and visible baby pink accents. */
+:root {
+  --cream: #faf8f2;
+  --sage: #71815c;
+  --sage-dark: #3f593d;
+  --blush: #f8dce5;
+  --blush-soft: #f9f8f0;
+  --green-soft: #b4c6ae;
+  --ink: #283729;
+  --ink-soft: #4f5d4b;
+  --border: #c9d2be;
+}
+body { background: var(--cream); }
+.site-header { background: rgba(250,248,242,.96); }
+.hero {
+  display: flex;
+  min-height: min(800px, calc(100svh - 70px));
+  padding-block: 85px 65px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.hero-copy { width: 100%; max-width: 980px; }
+.hero h1 { font-size: clamp(48px, 6.8vw, 90px); line-height: 1.05; }
+.hero .intro { max-width: 55ch; margin-inline: auto; font-size: 21px; }
+.hero .actions { justify-content: center; }
+.hero .signature { margin-top: 28px; }
+.scroll-invitation {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 34px;
+  color: var(--sage-dark);
+  font-size: 15px;
+  text-decoration: none;
+}
+.scroll-invitation span { display: inline-block; }
+.profile-section {
+  padding-block: 85px;
+  background: linear-gradient(115deg, #edf1e6, #faf8f2 60%, #fcebf0);
+  border-block: 1px solid var(--border);
+}
+.profile-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 85px; align-items: center; }
+.profile-section .portrait-composition {
+  width: 100%;
+  max-width: 410px;
+  background: radial-gradient(ellipse at 40% 45%, #e6eddd, transparent 70%);
+}
+.portrait-frame { background: linear-gradient(145deg, #cdd9bf, #f5e2e8); padding: 16px; }
+.portrait-frame img { height: 420px; }
+.portrait-composition figcaption { background: var(--blush); border-color: #e3c9d2; }
+.portrait-star { color: var(--sage-dark); }
+.profile-copy h2 { font-size: clamp(40px, 4.6vw, 64px); }
+.profile-copy > p:not(.eyebrow) { color: var(--ink-soft); }
+.profile-intro { font-size: 22px; margin-top: 24px; }
+.personal-notes { margin-top: 26px; }
+.personal-notes details { border-bottom: 0; padding: 0; }
+.personal-notes details:last-child { border-bottom: 1px solid var(--border); }
+.personal-notes summary {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 10px;
+  font-size: 21px;
+  list-style: none;
+}
+.personal-notes summary::-webkit-details-marker { display: none; }
+.personal-notes summary span:first-child { font-size: 12px; letter-spacing: .1em; }
+.personal-notes summary span:last-child {
+  margin-left: auto;
+  position: relative;
+  flex: 0 0 24px;
+  height: 24px;
+  font-size: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+.personal-notes summary span:last-child::before,
+.personal-notes summary span:last-child::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  background: currentColor;
+  left: 6px;
+  top: 10px;
+}
+.personal-notes summary span:last-child::after { transform: rotate(90deg); }
+.personal-notes details[open]:not([data-expanded="false"]) summary { background: #f9e6ed; }
+.personal-notes details[open]:not([data-expanded="false"]) summary span:last-child::after { transform: rotate(0deg); }
+.personal-notes details p { padding: 0 12px 18px 45px; font-size: 17px; }
+.profile-footnote { font-style: italic; font-size: 14px; margin: 20px 0 0; }
+.discipline-ribbon {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  border-block: 1px solid var(--border);
+  background: linear-gradient(100deg, #edf1e6, #faf8f2 55%, #fceef2);
+  color: var(--sage-dark);
+}
+.ribbon-viewport { overflow: hidden; padding-block: 24px; }
+.ribbon-track { display: flex; width: max-content; }
+.ribbon-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  gap: clamp(30px, 5vw, 100px);
+  min-width: 100vw;
+  padding-inline: clamp(15px, 2.5vw, 50px);
+  white-space: nowrap;
+  font-size: clamp(17px, 1.5vw, 23px);
+}
+.ribbon-star { color: var(--sage); font-size: 24px; }
+.discipline-ribbon:hover .ribbon-track,
+.discipline-ribbon:focus-within .ribbon-track { animation-play-state: paused; }
+@media (prefers-reduced-motion:no-preference) {
+  .ribbon-track { animation: ribbon-travel 32s linear infinite; }
+  @keyframes ribbon-travel { to { transform: translateX(-50%); } }
+}
+@media (prefers-reduced-motion:reduce) {
+  .ribbon-track { width: 100%; }
+  .ribbon-group { min-width: 0; width: 100%; flex-wrap: wrap; gap: 12px 24px; white-space: normal; padding-inline: 24px; }
+  .ribbon-group[aria-hidden="true"] { display: none; }
+}
+.project-visual { background: linear-gradient(130deg, #e0e8d6, #f9e5ec); }
+.window-bar { background: #f3f6eb; }
+.about { background: linear-gradient(115deg, #f9edf0, #faf8f2 55%, #edf1e6); }
+.contact-card {
+  background: radial-gradient(ellipse at 100% 100%, #e2e9d8, transparent 65%), linear-gradient(120deg, #faf8f2, #f9e2eb);
+  border-color: #dfd8ce;
+}
+.contact-flower { color: #48653e; opacity: .18; }
+.gallery-controls button { min-height: 36px; }
+/* Visible feedback also works with a keyboard; motion is optional. */
+nav a:not(.resume-link), .contact-links a, footer a { position: relative; text-decoration: none; }
+nav a:not(.resume-link)::after, .contact-links a::after, footer a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -4px;
+  height: 2px;
+  background: var(--sage-dark);
+}
+nav a:is(:hover,:focus-visible)::after,
+.contact-links a:is(:hover,:focus-visible)::after,
+footer a:is(:hover,:focus-visible)::after { right: 0; }
+.resume-link:is(:hover,:focus-visible), .menu-toggle:is(:hover,:focus-visible) { background: var(--sage-dark); color: #fff; }
+.button:is(:hover,:focus-visible) { background: #283f29; box-shadow: 0 9px 0 #c6d4b5; }
+.gallery-controls button:is(:hover,:focus-visible) { background: #d4e1c2; color: #283729; border-color: #283729; }
+.gallery-controls button[aria-pressed=true] { background: var(--sage-dark); color: white; }
+.personal-notes summary:is(:hover,:focus-visible) { background: #f9e6ed; }
+.toolkit li:hover { background: var(--sage-dark); color: white; border-color: var(--sage-dark); }
+.project-visual:focus-within { border-color: var(--sage-dark); box-shadow: 0 12px 30px #3f593d20; }
+.email:is(:hover,:focus-visible), .text-link:is(:hover,:focus-visible) { color: var(--sage-dark); text-decoration-thickness: 2px; }
+@media (hover:hover) {
+  .project-visual:hover { border-color: var(--sage-dark); box-shadow: 0 16px 35px #3f593d25; }
+  .portrait-composition:hover .portrait-frame { box-shadow: 0 15px 35px #3f593d30; }
+}
+@media (prefers-reduced-motion:no-preference) {
+  .personal-notes summary span:last-child::after { transition: transform .25s ease; }
+  .button, .resume-link, .menu-toggle, .gallery-controls button,
+  .project-visual, .portrait-frame, .portrait-composition figcaption,
+  .personal-notes summary, .personal-notes summary span, .toolkit li {
+    transition: transform .25s ease, background-color .25s ease, color .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  nav a::after, .contact-links a::after, footer a::after { transition: right .25s ease; }
+  .button:is(:hover,:focus-visible) { transform: translateY(-4px); }
+  .button span, .email span, .scroll-invitation span { transition: transform .25s ease; display: inline-block; }
+  .button:is(:hover,:focus-visible) span { transform: translate(3px,3px); }
+  .email:is(:hover,:focus-visible) span { transform: translate(4px,-4px); }
+  .scroll-invitation:is(:hover,:focus-visible) span { transform: translateY(5px); }
+  .gallery-controls button:is(:hover,:focus-visible) { transform: translateY(-2px); }
+  @media (hover:hover) {
+    .project-visual:hover { transform: translateY(-5px); }
+    .portrait-composition:hover figcaption { transform: rotate(0deg) translateY(-4px); }
+    .toolkit li:hover { transform: translateY(-3px); }
+  }
+}
+@media (max-width:900px) {
+  .profile-grid { gap: 40px; }
+  .portrait-frame img { height: 340px; }
+}
+@media (max-width:700px) {
+  .hero { min-height: calc(100svh - 70px); padding-block: 55px 45px; }
+  .hero h1 { font-size: clamp(43px, 9vw, 64px); }
+  .hero .intro { font-size: 19px; }
+  .profile-section { padding-block: 50px; }
+  .profile-grid { grid-template-columns: 1fr; gap: 40px; }
+  .profile-section .portrait-composition { max-width: 300px; }
+  .portrait-frame img { height: 290px; }
+  .profile-intro { font-size: 20px; }
+}

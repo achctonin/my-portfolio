@@ -1,0 +1,15 @@
+{
+  "published": false,
+  "title": "",
+  "summary": "What does this project do, and who is it for?",
+  "problem": "Describe the real problem or assignment.",
+  "role": "Your specific contribution; credit collaborators.",
+  "timeline": "",
+  "constraints": [],
+  "decisions": [{"decision": "", "reason": "", "evidence": ""}],
+  "screenshots": [{"file": "", "alt": "", "caption": "Explain what this screen demonstrates."}],
+  "outcome": "State what works today. Only include measured results you can verify.",
+  "lessons": "What changed in your thinking? What would you improve?",
+  "repositoryUrl": "",
+  "demoUrl": ""
+}

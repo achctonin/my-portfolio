@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ninotchca Sollestre — computer science student exploring thoughtful interfaces and full-stack development.">
+  <title>Ninotchca Sollestre — Design & Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/src/styles/main.css">
+  <link rel="stylesheet" href="/frontend/src/styles/identity.css">
+  <script src="/frontend/src/scripts/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Ninotchca Sollestre, home">ns<span aria-hidden="true">.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#work">Selected work</a><a href="#profile">Meet Ninotchca</a><a href="#contact">Let’s talk</a>
+      <a class="resume-link" href="../../../src/Resume.pdf" download>Résumé ↗</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Ninotchca Sollestre · Personal portfolio</p>
+        <h1 id="intro-title">Thoughtful interfaces.<br><em>From idea to code.</em></h1>
+        <p class="intro">Hi, I’m Ninotchca, a computer science student drawn to UI/UX and full-stack development. I enjoy connecting the details people see with the systems behind them.</p>
+        <div class="actions"><a class="button primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a><a class="text-link" href="../../../src/Resume.pdf" download>Download résumé ↗</a></div>
+        <a class="scroll-invitation" href="#profile">Meet the person behind the work <span aria-hidden="true">?</span></a>
+        <p class="signature">dum spiro, spero <span>— while I breathe, I hope</span></p>
+      </div>
+
+    </section>
+
+    <section class="profile-section" id="profile" aria-labelledby="profile-title">
+      <div class="wrap profile-grid">
+      <figure class="portrait-composition">
+        <div class="portrait-frame"><img src="../../../src/formal.png" alt="Ninotchca Sollestre" width="440" height="500" loading="lazy"></div>
+        <figcaption>A curious mind.<br><em>A considered approach.</em></figcaption>
+        <span class="portrait-star" aria-hidden="true">✳</span>
+      </figure>
+        <div class="profile-copy">
+          <p class="eyebrow">01 / The person behind the pixels</p>
+          <h2 id="profile-title">Ninotchca,<br><em>in a few layers.</em></h2>
+          <p class="profile-intro">A computer science student exploring the space where thoughtful design meets working software.</p>
+          <p>Green is my favorite color. Hope is a phrase I carry with me: <em>dum spiro, spero.</em> This little corner of the web brings those parts of me together.</p>
+          <div class="personal-notes" aria-label="A few layers of my interests">
+            <details open><summary><span>01</span> The designer <span aria-hidden="true">?</span></summary><p>I?m drawn to user-friendly interfaces and the small details that make an application feel considered.</p></details>
+            <details><summary><span>02</span> The builder <span aria-hidden="true">?</span></summary><p>I enjoy connecting the interface to the system behind it, growing my skills in Java, PostgreSQL, and full-stack development.</p></details>
+            <details><summary><span>03</span> The visual storyteller <span aria-hidden="true">?</span></summary><p>Freelance publication design gives me another way to explore how layout, color, and typography communicate an idea.</p></details>
+          </div>
+          <p class="profile-footnote">A small collection of what makes me, me.</p>
+        </div>
+      </div>
+    </section>
+    <section class="discipline-ribbon" aria-label="Areas of interest">
+      <div class="ribbon-viewport">
+        <div class="ribbon-track" id="discipline-track">
+          <div class="ribbon-group"><span>Interface design</span><span class="ribbon-star" aria-hidden="true">&#42;</span><span>Full-stack development</span><span class="ribbon-star" aria-hidden="true">&#42;</span><span>Visual storytelling</span><span class="ribbon-star" aria-hidden="true">&#42;</span></div>
+          <div class="ribbon-group" aria-hidden="true"><span>Interface design</span><span class="ribbon-star" aria-hidden="true">&#42;</span><span>Full-stack development</span><span class="ribbon-star" aria-hidden="true">&#42;</span><span>Visual storytelling</span><span class="ribbon-star" aria-hidden="true">&#42;</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="work wrap" id="work" aria-labelledby="work-title">
+      <div class="section-intro"><div><p class="eyebrow">02 / Selected work</p><h2 id="work-title">A closer look<br>at <em>the work.</em></h2></div><p>Interfaces, systems, and the thinking that connects them.</p></div>
+      <article class="featured-project">
+        <div class="project-visual">
+          <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>Metropolitan Theater</span></div>
+          <img id="project-image" src="../../../src/metropolitan-th/catalog.png" alt="Metropolitan Theater application catalog module" width="1000" height="650" loading="lazy">
+          <div class="gallery-controls" role="group" aria-label="Choose an application screenshot">
+            <button type="button" data-image="catalog" aria-pressed="true">Catalog</button><button type="button" data-image="customers" aria-pressed="false">Customers</button><button type="button" data-image="finances" aria-pressed="false">Finances</button><button type="button" data-image="personnel" aria-pressed="false">Personnel</button><button type="button" data-image="sales" aria-pressed="false">Sales</button>
+          </div>
+          <p class="image-caption" id="image-caption" aria-live="polite">01 / Catalog module — application screenshot</p>
+        </div>
+        <div class="project-story"><p class="eyebrow">School project · Desktop application</p><h3>Metropolitan<br><em>Theater</em></h3><p>An application for managing the historic Metropolitan Theater of Manila, bringing catalog, sales, personnel, finances, and customer management into one desktop system.</p><div class="tags"><span>Java</span><span>PostgreSQL</span></div>
+          <dl class="project-summary"><div><dt>The focus</dt><dd>Organizing several theater management tasks in a single application.</dd></div><div><dt>The interface</dt><dd>Dedicated screens for each management module, shown in the preview.</dd></div></dl>
+          <details><summary>Explore the project</summary><p>Use the screenshot buttons to explore the five modules. This preview documents the interface; it is not a live application demo.</p><p>More detail about my individual contribution, development decisions, and lessons learned will be added to this case study.</p></details>
+        </div>
+      </article>
+      <div class="next-chapter"><span class="chapter-number" aria-hidden="true">02</span><div><p class="eyebrow">The next chapter</p><h3>More work, <em>in the making.</em></h3><p>I’m preparing a closer look at my current projects and the process behind them.</p></div><span class="chapter-star" aria-hidden="true">✳</span></div>
+    </section>
+    <section class="about" id="about" aria-labelledby="about-title"><div class="wrap about-grid"><div><p class="eyebrow">03 / Behind the work</p><h2 id="about-title">A little curiosity.<br><em>A lot of care.</em></h2><p class="about-note">Designing with intention.<br>Learning by building.</p></div><div class="about-copy"><p>I’m Ninotchca, a computer science student with an interest in both how an application feels and how it works.</p><p>I enjoy building user-friendly interfaces and growing my development skills, from backend data architecture to the small details of an interaction. I also explore visual communication through freelance publication design.</p><h3>My growing toolkit</h3><ul class="toolkit"><li>Java</li><li>PostgreSQL</li><li>UI/UX design</li><li>Git & GitHub</li><li>VS Code</li></ul></div></div></section>
+    <section class="contact wrap" id="contact" aria-labelledby="contact-title"><div class="contact-card"><p class="eyebrow">04 / Make a connection</p><h2 id="contact-title">Have something<br><em>in mind?</em></h2><p>I’m open to internships, freelance work, and collaborations.</p><a class="email" href="mailto:ninotchcasollestre26@gmail.com">ninotchcasollestre26@gmail.com <span aria-hidden="true">↗</span></a><div class="contact-links"><a href="https://www.linkedin.com/in/ninotchca-s-348945322/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/achctonin" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="tel:+639955016734">+63 995 5016 734</a></div><span class="contact-flower" aria-hidden="true">✳</span></div></section>
+  </main>
+  <footer class="wrap"><p>© 2026 Ninotchca Sollestre</p><p>Made with care, and a little hope.</p><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
